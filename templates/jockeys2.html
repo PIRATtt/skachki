@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" bis_skin_checked="1">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+    
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="base.html" class="nav-link px-2 link-secondary">Главная</a></li>
+            <li><a href="raiting.html" class="nav-link px-2 link-dark">Рейтинг</a></li>
+            <li><a href="append.html" class="nav-link px-2 link-dark">Добавление</a></li>
+            <li><a href="new_result.html" class="nav-link px-2 link-dark">Новый результат</a></li>
+            <li><a href="jockeys.html" class="nav-link px-2 link-dark">Жокеи</a></li>
+            <li><a href="horses.html" class="nav-link px-2 link-dark">Лошади</a></li>
+          </ul>
+    
+          <div class="col-md-3 text-end" bis_skin_checked="1">
+            <button type="button" class="btn btn-outline-primary me-2">Войти</button>
+            <button type="button" class="btn btn-primary">Зарегестрироваться</button>
+          </div>
+        </header>
+      </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <label class="sr-only" for="inlineFormInputName">Выберите жокея</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <!-- Тут нужно делать запрос в базу за списком всех жокеев. -->
+                    <!-- SELECT name FROM jockeys -->
+                    <option selected>---</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Иван</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <main class="my-3 flex-shrink-0">
+        <div class="container">
+            <h1>Рейтинговая таблица жокея {{ Жокей }}</h1>
+            <!-- 
+SELECT r.place, b.name, h.name
+FROM battles as b, horses as h, `results` as r
+LEFT OUTER JOIN jockeys as j
+ON r.jockey=j.id
+WHERE j.name='Иван'
+AND j.id=r.jockey
+AND h.id=r.horse;
+             -->
+        </div>
+    </main>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-sm-6">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Состезание</th>
+                            <th>Место</th>
+                            <th>Лошадь</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Skachki</td>
+                            <td>1</td>
+                            <td>Юлий</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+</html>

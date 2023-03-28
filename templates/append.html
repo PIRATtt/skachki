@@ -1,0 +1,85 @@
+{% extends "templ.html" %}
+{% block content %}
+<div class="container mt-3">
+  <div class="container mt-3">
+    <h1>Добавление жокея</h1>
+    <!-- INSERT INTO `jockeys`(`name`, `address`, `age`, `rating`) VALUES ('Иван2','Адрес','22','3') -->
+    <form method="POST">
+      <div class="container mt-3">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="sr-only" for="inlineFormInputName">Никнейм</label>
+            <input type="text" id="name" name="name" class="form-control" id="inlineFormInputName" placeholder="Иван">
+          </div>
+          <div class="col-sm-2">
+            <label class="sr-only" for="inlineFormInputName">Возраст</label>
+            <input type="text" id="age" name="age" class="form-control" id="inlineFormInputName" placeholder="25">
+          </div>
+          <div class="col-sm-4">
+            <label class="sr-only" for="inlineFormInputName">Адрес</label>
+            <input type="text" id="address" name="address" class="form-control" id="inlineFormInputName" placeholder="Россия, г. Москва, ул. Гагарина, д. 1, кв. 11">
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-auto container mt-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="container mt-3">
+    <h1>Добавление лошади</h1>
+    <form method="POST">
+      <div class="container mt-3">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="sr-only" for="inlineFormInputName">Кличка лошади</label>
+            <input type="text" id="name_horse" name="name_horse" class="form-control" id="inlineFormInputName" placeholder="Иван">
+          </div>
+          <div class="col-sm-2">
+            <label class="sr-only" for="inlineFormInputName">Возраст</label>
+            <input type="text" id="age_horse" name="age_horse" class="form-control" id="inlineFormInputName" placeholder="25">
+          </div>
+          <div class="col-sm-3">
+            <label class="sr-only" for="inlineFormInputName">Пол</label>
+            <div class="input-group mb-3">
+                <select id="pol" name="pol" class="form-select" id="inputGroupSelect01">
+                  <option selected>Выберите...</option>
+                  <option value="М">М</option>
+                  <option value="Ж">Ж</option>
+                </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-auto container mt-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="container mt-3">
+    <h1>Добавление состезания</h1>
+    <form method="POST">
+      <div class="container mt-3">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="sr-only" for="inlineFormInputName">Название состезания</label>
+            <input type="text" id="battle" name="battle" class="form-control" id="inlineFormInputName" placeholder="Название">
+          </div>
+          <div class="col-sm-3">
+            <label class="sr-only" for="inlineFormInputName">Гиподром</label>
+            <input type="text" id="hippodrome" name="hippodrome" class="form-control" id="inlineFormInputName" placeholder="Стадион">
+          </div>
+          <div class="col-sm-2">
+            <label class="sr-only" for="date">Дата</label>
+            <input class="form-control" type="date" id="date" name="date" value="2018-07-22" min="2018-01-01">
+          </div>
+      </div>
+      <div class="col-auto container mt-3">
+        <button type="submit" class="btn btn-danger">Submit</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

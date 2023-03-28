@@ -1,0 +1,30 @@
+{% extends "templ.html" %}
+
+{% block content %}
+<h1>Жокеи</h1>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Адрес</th>
+                        <th>Возраст</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for jockey in jockeys %}
+                    <tr>
+                        <td>{{ jockey.name }}</td>
+                        <td>{{ jockey.age }}</td>
+                        <td>{{ jockey.address }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
