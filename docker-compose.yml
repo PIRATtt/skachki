@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:
+    container_name: mydb
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+    volumes:
+      - ./maria-data:/var/lib/mariadb
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
+volumes:
+  db_data:
