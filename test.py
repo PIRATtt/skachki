@@ -1,6 +1,8 @@
 from flask.testing import FlaskClient
 from app import app
 
+print('Test code!')
+
 def test_jockeys():
     with app.test_client() as client:
         response = client.get('/jockeys')
