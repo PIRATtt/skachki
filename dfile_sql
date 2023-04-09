@@ -1,0 +1,5 @@
+FROM python:3
+COPY . .
+WORKDIR .
+RUN pip install --upgrade pip && pip install pysqlite3
+ENTRYPOINT ["python3", "check_db.py"]

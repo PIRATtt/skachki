@@ -1,6 +1,6 @@
 import sqlite3
 
-db = sqlite3.connect('/home/krisanov/project/skachki/data/skachki.db')
+db = sqlite3.connect('./data/skachki.db')
 c = db.cursor()
 
 print(c.execute("""SELECT * FROM chance""").fetchall())
