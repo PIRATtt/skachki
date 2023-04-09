@@ -11,7 +11,7 @@ def test_jockeys():
 def test_index():
     with app.test_client() as client:
         response = client.get('/')
-        assert response.status_code == 201
+        assert response.status_code == 200
 
 def test_append():
     with app.test_client() as client:
