@@ -5,7 +5,7 @@ print('Test code!')
 
 def test_jockeys():
     with app.test_client() as client:
-        response = client.get('/jockeys1')
+        response = client.get('/jockeys')
         assert response.status_code == 200
 
 def test_index():
