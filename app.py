@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 import sqlite3
 
 app = Flask(__name__)
-db = sqlite3.connect('/home/krisanov/project/skachki/data/skachki.db')
+db = sqlite3.connect('.data/skachki.db')
 c = db.cursor()
 
 c.execute("""
